@@ -22,10 +22,11 @@ int main(int argc, char **argv)
 
     fseek(file,0,SEEK_END);
     int tamanhoArq = ftell(file);
-    int qtdReg = (tamanhoArq/sizeof(tempCovid));
+    int tamanhoReg = sizeof(tempCovid);
+    int qtdReg = (tamanhoArq/tamanhoReg);
     rewind(file);
 
-    printf("tamanho do arquivo em bytes:%d\ntamanho do registro em bytes:%d\nquantidade de registros:%d\n",tamanhoArq,sizeof(tempCovid),qtdReg);
+    printf("tamanho do arquivo em bytes:%d\ntamanho do registro em bytes:%d\nquantidade de registros:%d\n",tamanhoArq,tamanhoReg,qtdReg);
 
     fclose(file);
 

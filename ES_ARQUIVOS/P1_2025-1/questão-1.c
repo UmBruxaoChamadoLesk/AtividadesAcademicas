@@ -28,6 +28,16 @@ int main(int argc, char **argv)
 
     printf("tamanho do arquivo em bytes:%d\ntamanho do registro em bytes:%d\nquantidade de registros:%d\n",tamanhoArq,tamanhoReg,qtdReg);
 
+    int contador = 0;
+    while(qtdReg>0)
+    {
+        contador++;
+        tempCovid reg;
+        fread(&reg,tamanhoReg,1,file);
+        printf("REGISTRO:(%d)\ndia:%d\nnovos casos:%d\nobitos:%d\n",contador,reg.dia,reg.novos_casos,reg.obitos);
+        printf("====================================\n");
+        qtdReg--;
+    }
     fclose(file);
 
     return 0;

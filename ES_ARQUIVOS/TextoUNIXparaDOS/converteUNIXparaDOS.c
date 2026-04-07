@@ -49,7 +49,7 @@ int main(int argc, char **argv)
     fseek(copia, 0, SEEK_SET);
     
     // Alocar memória para o buffer (+1 para o \0)
-    char *buffer = malloc(tamanhoArq + 1);
+    char *buffer = (char *)malloc(tamanhoArq + 1);
     if(buffer == NULL) {
         printf("erro de alocacao de memoria\n");
         fclose(file);
